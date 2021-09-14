@@ -16,11 +16,12 @@ int FindSubset(string s, string substr, int ans){
 int main()
 {
 	string s, substr = ""; 
-	int ans = 0;
+	int ans;
 	while(true){
+		ans = 0;
 		cin>>s;
 		ans = FindSubset(s, substr, ans);
-		cout<<"\nTotal: "<<ans;
+		cout<<"\nTotal: "<<ans<<endl;
 	} 
 }
 
