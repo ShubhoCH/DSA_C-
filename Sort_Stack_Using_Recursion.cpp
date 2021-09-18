@@ -20,7 +20,7 @@ void SORT(stack<int>& s){
 	INSERT(s,temp);
 }
 int main()
-{
+{ 
 	int n,x;
 	cin>>n;
 	stack<int> s;
