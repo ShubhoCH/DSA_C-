@@ -29,9 +29,7 @@ int main(){
 		cin>>x;
 		s.push(x);
 	}
-	cout<<s.top()<<endl;
 	reverse(s);
-	cout<<s.top()<<endl;
 	for(int i=0;i<n;i++){
 		cout<<s.top();
 		s.pop();
