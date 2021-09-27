@@ -16,4 +16,18 @@ public:
         }
         return ans;
     }
+    //OPTIMAL: O(N)
+    int maxArea(vector<int>& height) {
+        int ans = 0;
+        for(int i=0,j=height.size()-1;i<j;){
+            int temp = (j-i)*min(height[i],height[j]);
+            if( temp > ans )
+                ans = temp;
+            if(height[i]<height[j])
+                i++;
+            else
+                j--;
+        }
+        return ans;
+    }
 };

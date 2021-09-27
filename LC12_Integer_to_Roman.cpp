@@ -3,6 +3,7 @@
 using namespace std;
 class Solution {
 public:
+    //NAIVE
     string Roman(int n) {
         vector<int> v = { 1,5,10,50,100,500,1000 };
         vector<string> vv = { "I","V","X","L","C","D","M" };
@@ -26,6 +27,19 @@ public:
             else
                 ans = Roman(temp) + ans;
             num = num / 10;
+        }
+        return ans;
+    }
+    //SLIGHTLY BETTER AND SMALL :)
+    string intToRoman(int num) {
+        string ans = "";
+        vector<int> v = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
+        string s[13] = {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
+        while(num>0){
+            int index = upper_bound(v.begin(),v.end(),num) - v.begin()-1;
+            for(int i=num/v[index];i>0;i--)
+                ans += s[index];
+            num %= v[index];
         }
         return ans;
     }
